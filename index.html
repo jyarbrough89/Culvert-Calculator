@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Culvert Sizing Calculator</h1>
-        <p>Calculate culvert size using Manning's equation in SI units</p>
+        <p>Calculate culvert size using Manning's equation in English units</p>
         
         <div class="calculator">
             <div class="tabs">
@@ -20,12 +20,12 @@
             <div id="circular" class="tab-content active">
                 <h2>Circular Culvert</h2>
                 <div class="input-group">
-                    <label for="circular-discharge">Design Discharge (m³/s):</label>
+                    <label for="circular-discharge">Design Discharge (cfs):</label>
                     <input type="number" id="circular-discharge" step="0.01" min="0" placeholder="Enter discharge">
                 </div>
                 
                 <div class="input-group">
-                    <label for="circular-slope">Channel Slope (m/m):</label>
+                    <label for="circular-slope">Channel Slope (ft/ft):</label>
                     <input type="number" id="circular-slope" step="0.001" min="0" placeholder="Enter slope">
                 </div>
                 
@@ -38,22 +38,22 @@
                 
                 <div class="results" id="circular-results">
                     <h3>Results</h3>
-                    <p>Required Diameter: <span id="circular-diameter">-</span> m</p>
-                    <p>Flow Velocity: <span id="circular-velocity">-</span> m/s</p>
-                    <p>Flow Area: <span id="circular-area">-</span> m²</p>
-                    <p>Flow Depth at Full Flow: <span id="circular-depth">-</span> m</p>
+                    <p>Required Diameter: <span id="circular-diameter">-</span> ft</p>
+                    <p>Flow Velocity: <span id="circular-velocity">-</span> ft/s</p>
+                    <p>Flow Area: <span id="circular-area">-</span> ft²</p>
+                    <p>Flow Depth at Full Flow: <span id="circular-depth">-</span> ft</p>
                 </div>
             </div>
             
             <div id="box" class="tab-content">
                 <h2>Box Culvert</h2>
                 <div class="input-group">
-                    <label for="box-discharge">Design Discharge (m³/s):</label>
+                    <label for="box-discharge">Design Discharge (cfs):</label>
                     <input type="number" id="box-discharge" step="0.01" min="0" placeholder="Enter discharge">
                 </div>
                 
                 <div class="input-group">
-                    <label for="box-slope">Channel Slope (m/m):</label>
+                    <label for="box-slope">Channel Slope (ft/ft):</label>
                     <input type="number" id="box-slope" step="0.001" min="0" placeholder="Enter slope">
                 </div>
                 
@@ -71,10 +71,10 @@
                 
                 <div class="results" id="box-results">
                     <h3>Results</h3>
-                    <p>Required Width: <span id="box-width">-</span> m</p>
-                    <p>Required Height: <span id="box-height">-</span> m</p>
-                    <p>Flow Velocity: <span id="box-velocity">-</span> m/s</p>
-                    <p>Flow Area: <span id="box-area">-</span> m²</p>
+                    <p>Required Width: <span id="box-width">-</span> ft</p>
+                    <p>Required Height: <span id="box-height">-</span> ft</p>
+                    <p>Flow Velocity: <span id="box-velocity">-</span> ft/s</p>
+                    <p>Flow Area: <span id="box-area">-</span> ft²</p>
                 </div>
             </div>
         </div>
@@ -83,16 +83,16 @@
             <h2>About Manning's Equation</h2>
             <p>Manning's equation is used to calculate the flow in open channels:</p>
             <div class="equation">
-                V = (1/n) × R<sup>2/3</sup> × S<sup>1/2</sup>
+                V = (1.49/n) × R<sup>2/3</sup> × S<sup>1/2</sup>
             </div>
             <p>Where:</p>
             <ul>
-                <li>V = Velocity (m/s)</li>
+                <li>V = Velocity (ft/s)</li>
                 <li>n = Manning's roughness coefficient</li>
-                <li>R = Hydraulic radius (m) = Area / Wetted perimeter</li>
-                <li>S = Channel slope (m/m)</li>
+                <li>R = Hydraulic radius (ft) = Area / Wetted perimeter</li>
+                <li>S = Channel slope (ft/ft)</li>
             </ul>
-            <p>The discharge Q (m³/s) is calculated using:</p>
+            <p>The discharge Q (cfs) is calculated using:</p>
             <div class="equation">
                 Q = A × V
             </div>
