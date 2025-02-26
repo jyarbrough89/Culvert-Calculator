@@ -46,8 +46,9 @@ function calculateCircular() {
     // Using Q = A * V and V = (1/n) * R^(2/3) * S^(1/2)
     // Substituting and solving for D:
     
-    // Simplifying the calculation for diameter:
-    const factor = Math.pow((discharge * manningN) / (0.312 * Math.sqrt(slope)), 3/8);
+    // Simplifying the calculation for diameter in English units:
+    // For English units, Manning's equation includes 1.49 instead of 1.0
+    const factor = Math.pow((discharge * manningN) / (0.463 * Math.sqrt(slope)), 3/8);
     const diameter = factor;
     
     // Calculate flow characteristics
@@ -101,7 +102,7 @@ function calculateBox() {
         area = width * height;
         wettedPerimeter = 2 * (width + height);
         hydraulicRadius = area / wettedPerimeter;
-        velocity = (1 / manningN) * Math.pow(hydraulicRadius, 2/3) * Math.pow(slope, 1/2);
+        velocity = (1.49 / manningN) * Math.pow(hydraulicRadius, 2/3) * Math.pow(slope, 1/2);
         calculatedDischarge = area * velocity;
         
         if (Math.abs(calculatedDischarge - discharge) < tolerance) {
